@@ -26,3 +26,5 @@
 // Add sound effects/music
 
 // convert to react after the completion of bootcamp to make it a better portfolio piece - stolen from tasnia and hal
+
+// add feedback to show that user on on a hot streak
