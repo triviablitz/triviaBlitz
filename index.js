@@ -24,3 +24,5 @@
 // Social sharing option to challenge friends to beat their score
 
 // Add sound effects/music
+
+// convert to react after the completion of bootcamp to make it a better portfolio piece - stolen from tasnia and hal
