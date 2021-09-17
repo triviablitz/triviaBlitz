@@ -13,7 +13,38 @@
 // Pseudo code
 
 
-// User opens the page to a landing page at the top followed by a center console that contains a form. The form contains some dropdowns that shape the type of trivia game they would like to play. They can choose between category and difficulty. User presses a submit button once they have selected their game options and they are snap scrolled 100vh down to the the game area.
+// Set up global namespace object as well as init function
+
+// Set up global namespaces variables as well as event listeners - score - timer - questionNumber - questionsArray - query selector for questions div
+
+// Add event listener for landing page form to get game options from user 
+
+// Take this data and use it to create a URL object to pass to our fetch request
+
+// Create fetch request, passing URL object, get response and take the results array and remap to a new array with each index being an object containing answer, incorrect answers and question.
+
+// create a setInterval function that will check whether the game is being run for the first time, as well as whether our timer has reached 0 and questions remain or not. 
+
+//create display function. Create new element on page for storing questions and answers.
+// clear this element each time this function is run
+//take the answers array and sort in order to randomize order, then assign these answers to the innerHTML of the newly created element.
+// Use the questions value to create a header
+//append both elements to the required section
+
+
+//If questions remain and timer has reached zero or first run is true, then run display function, reset timer to original start and increase question number. If questions remaining is 0 and timer has reached 0, present user with final score and ask if they want to play again.
+
+
+
+
+
+
+
+
+
+
+
+//  The form contains some dropdowns that shape the type of trivia game they would like to play. They can choose between category and difficulty. User presses a submit button once they have selected their game options and they are snap scrolled 100vh down to the the game area.
 
 // The submitted data is used to create an api call to the trivia API. The response from the API data is stored in a variable such as app.questions. For each question, the data will be display on the page for the user. An h2 heading will display the questions followed by a ul containing 3 wrong answers and 1 right answer in randomized order. An event listener is set on each. When the user clicks on an answer, their answer/score is stored in a variable and the next question in the questions array is immediately painted to the screen.
 
@@ -24,9 +55,11 @@
 // STRETCH
 
 
-// Implement site tokens to improve reusability. - maybe localstorage?
+// Implement site tokens to improve reusability - maybe localstorage?
+// the API supports a 6 hour token that prevents a user from generating the same questions more than once
 
 // A timer that starts at the beginning of each question.
+
 // A score that is calculated based on the correctness of answer and time remaining.
 
 // More complex play again button at the end of the game.
@@ -38,3 +71,5 @@
 // convert to react after the completion of bootcamp to make it a better portfolio piece - stolen from tasnia and hal
 
 // add feedback to show that user on on a hot streak
+
+// loader 
