@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,70 @@
   <title>Trivia Blitz</title>
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
-     
+
+  <main class="wrapper">
+
+    <div class="welcome">
+      <div class="headingContainer">
+        <div class="imgContainer">
+          <img src="" alt="">
+        </div>
+        <div class="gameInfo">
+          <h2>Game Info</h2>
+          <ul>
+            <li>You will have 30 seconds to answer each question</li>
+            <li>Choose the # of questions</li>
+            <li>You'll receive 100 per correct answer</li>
+          </ul>
+        </div>
+      </div>
+      <!--headingContainer ends-->
+
+      <form action="">
+        <label class="sr-only" for="category">Category of questions</label>
+        <select name="category" id="category">
+          <option value="9">General Knowledge</option>
+          <option value="11">Entertainment: Film</option>
+          <option value="12">Entertainment: Music</option>
+          <option value="15">Entertainment: Video Games</option>
+          <label class="sr-only" for="difficulty">difficulty of questions</label>
+          <select name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <label for="numberOfQuestions" class="sr-only">number of questions</label>
+          <select name="numberOfQuestions" id="numberOfQuestions">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+          <button>GO!</button>
+      </form>
+    </div>
+    <!--welcome ends-->
+ 
+
+
+
+
+
+
+    <div class="game hidden">
+      <div class="stats">
+        <div class="topLeftLogo"></div>
+        <div class="gameStats"></div>
+      </div>
+      <div class="questionAnswers"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Data provided by <a href="https://opentdb.com/" target="_blank">Open Trivia API</a></p>
+  </footer>
+
 </body>
+
 </html>
