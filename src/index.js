@@ -134,7 +134,11 @@ app.checkAnswer = () => {
     })
 }
 
+// create a setInterval function that will check whether the game is being run for the first time, as well as whether our timer has reached 0 and questions remain or not. 
+
+
 app.timerInterval = () => {
+//If questions remain and timer has reached zero or first run is true, then run display function, reset timer to original start and increase question number. If questions remaining is 0 and timer has reached 0, present user with final score and ask if they want to play again.
  if (app.questionNumber === app.questions.length && app.userAnswer) {
         clearInterval (app.intervalID);
         console.log('Game over')
@@ -155,12 +159,6 @@ app.init = () => {
 app.init();
 
 
-// create a setInterval function that will check whether the game is being run for the first time, as well as whether our timer has reached 0 and questions remain or not. 
-
-
-
-
-//If questions remain and timer has reached zero or first run is true, then run display function, reset timer to original start and increase question number. If questions remaining is 0 and timer has reached 0, present user with final score and ask if they want to play again.
 
 
 
