@@ -107,7 +107,7 @@ app.displayResults = () => {
     
     app.questions[app.questionNumber].wrongAnswers.forEach( answer => {
         const answerHTML = document.createElement('li');
-        answerHTML.textContent = answer;
+        answerHTML.innerHTML = answer;
         app.newAnswers.append(answerHTML)
     })
     app.gameSection.append(app.newQuestion,app.newAnswers);
@@ -121,7 +121,7 @@ app.checkAnswer = () => {
     app.newAnswers.addEventListener('click', function(e) {
         app.userAnswer = e.target.textContent;
         if (app.userAnswer === app.questions[app.questionNumber].correctAnswer) {
-            app.score += 100;
+            app.score += 100 + ((app.timer * app.timer) / 2);
             app.questionNumber++;
             app.scoreDisplay.textContent = `Score: ${app.score}`;
         }else {
@@ -140,6 +140,8 @@ app.timerInterval = () => {
      //game over
         clearInterval (app.intervalID);
         app.userAnswer = '';
+    // present play again button on a modal 
+        document.querySelector('.endGameModal').classList.toggle('hidden');
     }   else if (app.firstRun === true || app.timer === 0 && app.questionNumber < app.questions.length || app.userAnswer) {
         //display next question and reset timer
         app.userAnswer = '';
