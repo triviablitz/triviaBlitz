@@ -51,6 +51,12 @@ app.getUserOptions = () => {
     })
 }
 
+
+
+// Take this data and use it to create a URL object to pass to our fetch request
+
+// Create fetch request, passing URL object, get response and take the results array and remap to a new array with each index being an object containing answer, incorrect answers and question.
+
 app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
     const apiUrl = new URL('https://opentdb.com/api');
     apiUrl.searchParams = new URLSearchParams({
@@ -88,9 +94,7 @@ app.init = () => {
 }
 
 app.init();
-// Take this data and use it to create a URL object to pass to our fetch request
 
-// Create fetch request, passing URL object, get response and take the results array and remap to a new array with each index being an object containing answer, incorrect answers and question.
 
 // create a setInterval function that will check whether the game is being run for the first time, as well as whether our timer has reached 0 and questions remain or not. 
 
