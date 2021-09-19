@@ -29,13 +29,17 @@ const app = {};
 // Set up global namespaces variables as well as event listeners - score - timer - questionNumber - questionsArray - query selector for questions div
 app.score = 0;
 app.timer = 30;
-app.questionNumber;
+app.questionNumber = 0;
 app.questions = [];
 app.firstRun = true;
 
 app.welcomeScreen = document.querySelector('.welcome');
 app.gameScreen = document.querySelector('.game');
 app.gameSection = document.querySelector('.questionAnswers');
+app.gameStats = document.querySelector('.gameStats');
+app.timerDisplay = document.querySelector('#timer');
+app.scoreDisplay = document.querySelector('#score');
+app.questionCounterDisplay = document.querySelector('#questionsCounter');
 
 // Add event listener for landing page form to get game options from user 
 app.getUserOptions = () => {
@@ -69,9 +73,7 @@ app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
     fetch(`https://opentdb.com/api.php?amount=${numOfQuestions}&category=${categoryOption}&difficulty=${difficultyOption}&type=multiple`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
         app.questions = res.results.map(question => {
-            console.log(question);
             question.incorrect_answers.push(question.correct_answer);
             return {
                 wrongAnswers: question.incorrect_answers,
@@ -82,12 +84,69 @@ app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
 })
     
     .then(() => {
-        console.log(app.questions)
+        app.intervalID = setInterval(app.timerInterval, 1000);
+        app.intervalID;
     });
 }
 
+//create display function. Create new element on page for storing questions and answers.
+// clear this element each time this function is run
+//take the answers array and sort in order to randomize order, then assign these answers to the innerHTML of the newly created element.
+// Use the questions value to create a header
+//append both elements to the required section
+
+app.displayResults = () => {
+    app.firstRun = false;
+    app.gameSection.innerHTML = '';
+    app.newQuestion = document.createElement('h2')
+    app.newAnswers = document.createElement('ul');
+
+    app.questions[app.questionNumber].wrongAnswers.sort();
+
+    app.newQuestion.innerHTML = app.questions[app.questionNumber].question;
+    
+    app.questions[app.questionNumber].wrongAnswers.forEach( answer => {
+        const answerHTML = document.createElement('li');
+        answerHTML.textContent = answer;
+        app.newAnswers.append(answerHTML)
+    })
+    app.gameSection.append(app.newQuestion,app.newAnswers);
+    app.questionCounterDisplay.textContent = `Question number: ${app.questionNumber + 1}`;
+    app.checkAnswer();
 
 
+}
+// a function that adds event listeners to the answer elements after they are painted to the page -- if clicked, app.score is incremented else not
+app.checkAnswer = () => {
+    app.newAnswers.addEventListener('click', function(e) {
+        app.userAnswer = e.target.textContent;
+        console.log(app.userAnswer);
+        console.log(app.questions[app.questionNumber].correctAnswer);
+        console.log('answer has been clicked');
+        if (app.userAnswer === app.questions[app.questionNumber].correctAnswer) {
+            app.score += 100;
+            app.questionNumber++;
+            app.scoreDisplay.textContent = `Score: ${app.score}`;
+        }else {
+            app.questionNumber++;
+            app.scoreDisplay.textContent = `Score: ${app.score}`;
+        }
+    })
+}
+
+app.timerInterval = () => {
+ if (app.questionNumber === app.questions.length && app.userAnswer) {
+        clearInterval (app.intervalID);
+        console.log('Game over')
+        app.userAnswer = '';
+    }   else if (app.firstRun === true || app.timer === 0 && app.questionNumber < app.questions.length || app.userAnswer) {
+        app.userAnswer = '';
+        app.displayResults();
+        app.timer = 30;
+    }
+    app.timerDisplay.textContent = '';
+    app.timerDisplay.textContent = `Time Left: ${app.timer--}`;
+}
 
 app.init = () => {
     app.getUserOptions();
@@ -98,11 +157,7 @@ app.init();
 
 // create a setInterval function that will check whether the game is being run for the first time, as well as whether our timer has reached 0 and questions remain or not. 
 
-//create display function. Create new element on page for storing questions and answers.
-// clear this element each time this function is run
-//take the answers array and sort in order to randomize order, then assign these answers to the innerHTML of the newly created element.
-// Use the questions value to create a header
-//append both elements to the required section
+
 
 
 //If questions remain and timer has reached zero or first run is true, then run display function, reset timer to original start and increase question number. If questions remaining is 0 and timer has reached 0, present user with final score and ask if they want to play again.
