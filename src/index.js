@@ -120,9 +120,6 @@ app.displayResults = () => {
 app.checkAnswer = () => {
     app.newAnswers.addEventListener('click', function(e) {
         app.userAnswer = e.target.textContent;
-        console.log(app.userAnswer);
-        console.log(app.questions[app.questionNumber].correctAnswer);
-        console.log('answer has been clicked');
         if (app.userAnswer === app.questions[app.questionNumber].correctAnswer) {
             app.score += 100;
             app.questionNumber++;
@@ -140,10 +137,11 @@ app.checkAnswer = () => {
 app.timerInterval = () => {
 //If questions remain and timer has reached zero or first run is true, then run display function, reset timer to original start and increase question number. If questions remaining is 0 and timer has reached 0, present user with final score and ask if they want to play again.
  if (app.questionNumber === app.questions.length && app.userAnswer) {
+     //game over
         clearInterval (app.intervalID);
-        console.log('Game over')
         app.userAnswer = '';
     }   else if (app.firstRun === true || app.timer === 0 && app.questionNumber < app.questions.length || app.userAnswer) {
+        //display next question and reset timer
         app.userAnswer = '';
         app.displayResults();
         app.timer = 30;
