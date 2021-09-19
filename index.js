@@ -1,4 +1,13 @@
 
+
+
+
+
+
+
+
+
+
 // DESCRIPTION OF PROJECT
 // A TRIVIA GAME POWERED BY THE OPEN TRIVIA API
 
@@ -14,11 +23,26 @@
 
 
 // Set up global namespace object as well as init function
+const app = {};
+
 
 // Set up global namespaces variables as well as event listeners - score - timer - questionNumber - questionsArray - query selector for questions div
+app.score = 0;
+app.timer = 30;
+app.questionNumber;
+app.questions = [];
+app.firstRun = true;
+
+app.gameSection = document.querySelector('.questionAnswers');
 
 // Add event listener for landing page form to get game options from user 
-
+app.getUserOptions = () => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log(e)
+    })
+}
 // Take this data and use it to create a URL object to pass to our fetch request
 
 // Create fetch request, passing URL object, get response and take the results array and remap to a new array with each index being an object containing answer, incorrect answers and question.
