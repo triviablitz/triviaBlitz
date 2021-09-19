@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trivia Blitz</title>
-  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -22,8 +22,7 @@
           <h2>Game Info</h2>
           <ul>
             <li>You will have 30 seconds to answer each question</li>
-            <li>Choose the # of questions</li>
-            <li>You'll receive 100 per correct answer</li>
+            <li>You'll receive 100 points per correct answer plus bonus points for time remaining</li>
           </ul>
         </div>
       </div>
@@ -31,20 +30,23 @@
 
       <form action="">
         <label class="sr-only" for="category">Category of questions</label>
-        <select name="category" id="category">
+        <select name="category" id="category" required>
+          <option value= "" selected disabled>Choose a Category</option>
           <option value="9">General Knowledge</option>
           <option value="11">Entertainment: Film</option>
           <option value="12">Entertainment: Music</option>
           <option value="15">Entertainment: Video Games</option>
         </select>
         <label class="sr-only" for="difficulty">difficulty of questions</label>
-        <select name="difficulty" id="difficulty">
+        <select name="difficulty" id="difficulty" required>
+          <option value="" selected disabled>Choose a difficulty</option>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
         <label for="numberOfQuestions" class="sr-only">number of questions</label>
-        <select name="numberOfQuestions" id="numberOfQuestions">
+        <select name="numberOfQuestions" id="numberOfQuestions" required>
+          <option value ="" selected disabled>Choose number of Questions</option>
           <option value="10">10</option>
           <option value="15">15</option>
           <option value="20">20</option>
