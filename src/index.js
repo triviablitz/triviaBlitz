@@ -33,6 +33,8 @@ app.questionNumber;
 app.questions = [];
 app.firstRun = true;
 
+app.welcomeScreen = document.querySelector('.welcome');
+app.gameScreen = document.querySelector('.game');
 app.gameSection = document.querySelector('.questionAnswers');
 
 // Add event listener for landing page form to get game options from user 
@@ -40,9 +42,52 @@ app.getUserOptions = () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log(e)
+        const category = document.querySelector('#category').value;
+        const difficulty = document.querySelector('#difficulty').value;
+        const numOfQuestions = document.querySelector('#numberOfQuestions').value;
+        app.welcomeScreen.style.display = 'none';
+        app.gameScreen.style.display = 'block';
+        app.apiCall(category, difficulty, numOfQuestions);
     })
 }
+
+app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
+    const apiUrl = new URL('https://opentdb.com/api');
+    apiUrl.searchParams = new URLSearchParams({
+        amount: numOfQuestions,
+        category: categoryOption,
+        difficulty: difficultyOption,
+        type: 'multiple'
+    });
+    // fetch(apiUrl, {mode: 'no-cors'})
+    fetch(`https://opentdb.com/api.php?amount=${numOfQuestions}&category=${categoryOption}&difficulty=${difficultyOption}&type=multiple`)
+    .then(response => response.json())
+    .then(res => {
+        console.log(res);
+        app.questions = res.results.map(question => {
+            console.log(question);
+            question.incorrect_answers.push(question.correct_answer);
+            return {
+                wrongAnswers: question.incorrect_answers,
+                correctAnswer: question.correct_answer,
+                question: question.question
+            };
+    });
+})
+    
+    .then(() => {
+        console.log(app.questions)
+    });
+}
+
+
+
+
+app.init = () => {
+    app.getUserOptions();
+}
+
+app.init();
 // Take this data and use it to create a URL object to pass to our fetch request
 
 // Create fetch request, passing URL object, get response and take the results array and remap to a new array with each index being an object containing answer, incorrect answers and question.
