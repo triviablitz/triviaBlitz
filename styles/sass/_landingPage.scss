@@ -10,6 +10,7 @@
 .headingContainer {
    display: flex;
    flex-direction: column;
+   position: relative;
 
 }
 
@@ -20,10 +21,20 @@
   height: 400px;
   transform: rotate(7deg);
   background-color: $secondaryBackground;
+  z-index: 2;
 }
 
+.offsetBG {
+  position: absolute;
+  width: 91%;
+  height: 100%;
+  background-color: $secondaryAccent;
+  transform: rotate(365deg);
+}
+
+
+
 .gameInfo {
-  
   color: $fontColour;
   font-family: 'Rubik Mono One', sans-serif;
   width: 81%;
@@ -79,3 +90,4 @@ button {
   background-color: #F56FAD;
   padding: 0.35rem;
 }
+
