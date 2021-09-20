@@ -27,7 +27,7 @@
   color: $fontColour;
   font-family: 'Rubik Mono One', sans-serif;
   width: 81%;
-  margin-right: -2 rem;
+  margin: 0 auto;
 
   h2 {
     font-weight: normal;
@@ -36,11 +36,34 @@
   li {
     padding: 1rem 0;
   }
+
+  ul > li:last-child {
+    margin-left: 3rem;
+  }
 }
 
+
+
 form {
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    color: $fontColour;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
 }
 
 select {

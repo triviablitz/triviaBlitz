@@ -273,7 +273,7 @@ template {
   color: #fff;
   font-family: "Rubik Mono One", sans-serif;
   width: 81%;
-  margin-right: -2 rem;
+  margin: 0 auto;
 }
 .gameInfo h2 {
   font-weight: normal;
@@ -281,11 +281,41 @@ template {
 .gameInfo li {
   padding: 1rem 0;
 }
+.gameInfo ul > li:last-child {
+  margin-left: 3rem;
+}
 
 form {
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
   -ms-flex-item-align: center;
       align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+form h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Rubik Mono One", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 select {
