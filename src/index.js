@@ -62,15 +62,15 @@ app.getUserOptions = () => {
 // Create fetch request, passing URL object, get response and take the results array and remap to a new array with each index being an object containing answer, incorrect answers and question.
 
 app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
-    const apiUrl = new URL('https://opentdb.com/api');
-    apiUrl.searchParams = new URLSearchParams({
+    const apiUrl = new URL('https://opentdb.com/api.php');
+    apiUrl.search = new URLSearchParams({
         amount: numOfQuestions,
         category: categoryOption,
         difficulty: difficultyOption,
         type: 'multiple'
     });
-    // fetch(apiUrl, {mode: 'no-cors'})
-    fetch(`https://opentdb.com/api.php?amount=${numOfQuestions}&category=${categoryOption}&difficulty=${difficultyOption}&type=multiple`)
+    
+    fetch(apiUrl)
     .then(response => response.json())
     .then(res => {
         app.questions = res.results.map(question => {
