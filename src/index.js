@@ -28,7 +28,7 @@ const app = {};
 
 // Set up global namespaces variables as well as event listeners - score - timer - questionNumber - questionsArray - query selector for questions div
 app.score = 0;
-app.timer = 30;
+app.timer;
 app.questionNumber = 0;
 app.questions = [];
 app.firstRun = true;
