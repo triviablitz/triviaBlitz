@@ -120,11 +120,17 @@ app.displayResults = () => {
 app.checkAnswer = () => {
     app.newAnswers.addEventListener('click', function(e) {
         app.userAnswer = e.target.textContent;
+        const isCorrect = document.createElement('p');
+        
         if (app.userAnswer === app.questions[app.questionNumber].correctAnswer) {
             app.score += 100 + ((app.timer * app.timer) / 2);
+            isCorrect.textContent = 'correct';
+            e.target.append(isCorrect);
             app.questionNumber++;
             app.scoreDisplay.textContent = `Score: ${app.score}`;
         }else {
+            isCorrect.textContent = 'wrong';
+            e.target.append(isCorrect);
             app.questionNumber++;
             app.scoreDisplay.textContent = `Score: ${app.score}`;
         }
@@ -141,11 +147,18 @@ app.timerInterval = () => {
         clearInterval (app.intervalID);
         app.userAnswer = '';
     // present play again button on a modal 
-        document.querySelector('.endGameModal').classList.toggle('hidden');
-    }   else if (app.firstRun === true || app.timer === 0 && app.questionNumber < app.questions.length || app.userAnswer) {
-        //display next question and reset timer
+        document.querySelector('.endGameModal').classList.remove('hidden');
+    } else if (app.timer === 0 && app.questionNumber < app.questions.length) { //Checks if timer has run out without an answer being given and advances to next question
         app.userAnswer = '';
+        app.questionNumber++;
         app.displayResults();
+        app.timer = 30;
+    }  else if (app.firstRun === true || app.userAnswer) {
+        //display next question and reset timer
+        setTimeout(() => {
+            app.userAnswer = '';
+            app.displayResults();
+        }, 1000);
         app.timer = 30;
     }
     app.timerDisplay.textContent = '';
