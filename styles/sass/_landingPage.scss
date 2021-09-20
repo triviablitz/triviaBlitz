@@ -2,29 +2,32 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background-color: $mainBackground;
   margin: 0 auto;
 }
 
 .headingContainer {
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
+
 }
 
 .imgContainer {
-  align-self: flex-start;
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  width: 91%;
   height: 400px;
+  transform: rotate(7deg);
   background-color: $secondaryBackground;
 }
 
 .gameInfo {
-  align-self: flex-end;
+  
   color: $fontColour;
   font-family: 'Rubik Mono One', sans-serif;
-  width: 32%;
-  justify-self: flex-end;
+  width: 81%;
+  margin-right: -2 rem;
 
   h2 {
     font-weight: normal;
@@ -36,6 +39,20 @@
 }
 
 form {
-  margin-top: 13rem;
+  margin-top: 2.5rem;
   align-self: center;
+}
+
+select {
+  background-color: $primaryAccent;
+  color: white;
+  padding: 0.3rem;
+}
+
+button {
+  border: none;
+  width: 4rem;
+  color: white;
+  background-color: #F56FAD;
+  padding: 0.35rem;
 }
