@@ -268,7 +268,7 @@ template {
   -webkit-transform: rotate(7deg);
           transform: rotate(7deg);
   background-color: #C32BAD;
-  z-index: 2;
+  z-index: 3;
 }
 
 .offsetBG {
@@ -278,8 +278,89 @@ template {
   background-color: #F56FAD;
   -webkit-transform: rotate(365deg);
           transform: rotate(365deg);
+  z-index: 2;
+  -webkit-animation-name: sway;
+          animation-name: sway;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
+.offsetBGTwo {
+  position: absolute;
+  width: 91%;
+  height: 100%;
+  background-color: white;
+  -webkit-transform: rotate(363deg);
+          transform: rotate(363deg);
+  -webkit-animation-name: swayTwo;
+          animation-name: swayTwo;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+@-webkit-keyframes sway {
+  0% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+  50% {
+    -webkit-transform: rotate(369deg);
+            transform: rotate(369deg);
+  }
+  100% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+}
+
+@keyframes sway {
+  0% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+  50% {
+    -webkit-transform: rotate(369deg);
+            transform: rotate(369deg);
+  }
+  100% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+}
+@-webkit-keyframes swayTwo {
+  0% {
+    -webkit-transform: rotate(363deg);
+            transform: rotate(363deg);
+  }
+  50% {
+    -webkit-transform: rotate(371deg);
+            transform: rotate(371deg);
+  }
+  100% {
+    -webkit-transform: rotate(363deg);
+            transform: rotate(363deg);
+  }
+}
+@keyframes swayTwo {
+  0% {
+    -webkit-transform: rotate(363deg);
+            transform: rotate(363deg);
+  }
+  50% {
+    -webkit-transform: rotate(371deg);
+            transform: rotate(371deg);
+  }
+  100% {
+    -webkit-transform: rotate(363deg);
+            transform: rotate(363deg);
+  }
+}
 .gameInfo {
   color: #fff;
   font-family: "Rubik Mono One", sans-serif;
@@ -291,13 +372,14 @@ template {
 }
 .gameInfo li {
   padding: 1rem 0;
+  margin-top: 1rem;
 }
 .gameInfo ul > li:last-child {
   margin-left: 3rem;
 }
 
 form {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;
@@ -312,12 +394,12 @@ form {
           justify-content: center;
 }
 form h2 {
-  width: 100%;
   text-align: center;
   color: #fff;
   font-family: "Rubik Mono One", sans-serif;
   font-weight: normal;
   font-size: 1rem;
+  margin-right: 6rem;
 }
 
 .form-container {
