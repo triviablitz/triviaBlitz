@@ -73,6 +73,7 @@ app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
     fetch(apiUrl)
     .then(response => response.json())
     .then(res => {
+        console.log(res)
         app.questions = res.results.map(question => {
             question.incorrect_answers.push(question.correct_answer);
             return {
@@ -100,14 +101,15 @@ app.displayResults = () => {
     app.gameSection.innerHTML = '';
     app.newQuestion = document.createElement('h2')
     app.newAnswers = document.createElement('ul');
+    app.currentQuestion = app.questions[app.questionNumber];
+    app.currentQuestion.wrongAnswers.sort();
 
-    app.questions[app.questionNumber].wrongAnswers.sort();
-
-    app.newQuestion.innerHTML = app.questions[app.questionNumber].question;
+    app.newQuestion.innerHTML = app.currentQuestion.question;
     
-    app.questions[app.questionNumber].wrongAnswers.forEach( answer => {
+    app.currentQuestion.wrongAnswers.forEach( (answer, index) => {
         const answerHTML = document.createElement('li');
-        answerHTML.innerHTML = answer;
+        answerHTML.innerHTML = `<p>${answer}</p>`;
+        answerHTML.classList.add('answer',`answer${index}`);
         app.newAnswers.append(answerHTML)
     })
     app.gameSection.append(app.newQuestion,app.newAnswers);
@@ -122,7 +124,7 @@ app.checkAnswer = () => {
         app.userAnswer = e.target.textContent;
         const isCorrect = document.createElement('p');
         
-        if (app.userAnswer === app.questions[app.questionNumber].correctAnswer) {
+        if (app.userAnswer === app.currentQuestion.correctAnswer) {
             app.score += 100 + ((app.timer * app.timer) / 2);
             isCorrect.textContent = 'correct';
             e.target.append(isCorrect);
