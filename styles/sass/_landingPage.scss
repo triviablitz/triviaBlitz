@@ -25,6 +25,7 @@
   transform: rotate(7deg);
   background-color: $secondaryBackground;
   z-index: 3;
+  border-radius: 50%;
 }
 
 .offsetBG {
@@ -37,6 +38,7 @@
   animation-name: sway;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  border-radius: 50%;
 }
 
 .offsetBGTwo {
@@ -49,6 +51,7 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-delay: 0.1s;
+  border-radius: 50%;
 }
 
 //////////////////////offset animation

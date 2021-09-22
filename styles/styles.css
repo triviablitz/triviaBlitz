@@ -269,6 +269,7 @@ template {
           transform: rotate(7deg);
   background-color: #C32BAD;
   z-index: 3;
+  border-radius: 50%;
 }
 
 .offsetBG {
@@ -285,6 +286,7 @@ template {
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+  border-radius: 50%;
 }
 
 .offsetBGTwo {
@@ -302,6 +304,7 @@ template {
           animation-iteration-count: infinite;
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
+  border-radius: 50%;
 }
 
 @-webkit-keyframes sway {
