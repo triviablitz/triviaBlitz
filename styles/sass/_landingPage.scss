@@ -7,9 +7,13 @@
   margin: 0 auto;
 }
 
+
+////////////////////////////// logo container
+
 .headingContainer {
    display: flex;
    flex-direction: column;
+   position: relative;
 
 }
 
@@ -20,14 +24,59 @@
   height: 400px;
   transform: rotate(7deg);
   background-color: $secondaryBackground;
+  z-index: 3;
 }
 
+.offsetBG {
+  position: absolute;
+  width: 91%;
+  height: 100%;
+  background-color: $secondaryAccent;
+  transform: rotate(365deg);
+  z-index: 2;
+  animation-name: sway;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.offsetBGTwo {
+  position: absolute;
+  width: 91%;
+  height: 100%;
+  background-color: white;
+  transform: rotate(363deg);
+  animation-name: swayTwo;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+}
+
+//////////////////////offset animation
+
+
+
+@keyframes sway {
+  0%   {transform: rotate(365deg)}
+  50%  {transform: rotate(369deg)}
+  100% {transform: rotate(365deg)}
+}
+
+@keyframes swayTwo {
+  0%   {transform: rotate(363deg)}
+  50%  {transform: rotate(371deg)}
+  100% {transform: rotate(363deg)}
+}
+
+
+
+///////////game info section
+
+
 .gameInfo {
-  
   color: $fontColour;
   font-family: 'Rubik Mono One', sans-serif;
   width: 81%;
-  margin-right: -2 rem;
+  margin: 0 auto;
 
   h2 {
     font-weight: normal;
@@ -35,12 +84,40 @@
 
   li {
     padding: 1rem 0;
+    margin-top: 1rem;
+  }
+
+  ul > li:last-child {
+    margin-left: 3rem;
   }
 }
 
+
+
+
+/////////////////// form 
+
 form {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    
+    text-align: center;
+    color: $fontColour;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    margin-right: 6rem;
+  }
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
 }
 
 select {
@@ -56,3 +133,4 @@ button {
   background-color: #F56FAD;
   padding: 0.35rem;
 }
+
