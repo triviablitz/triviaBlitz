@@ -1,0 +1,103 @@
+.questionAnswers {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-weight: 400;
+        margin: 5rem 0;
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        li:hover {
+            cursor:pointer;
+            opacity: 90%;
+        }
+    }
+}
+
+.answer {
+    align-items: center;
+    border: 1px solid $fontColour;
+    border-radius: 0.5rem;
+    color: $fontColour;
+    display: flex;
+    flex: 0 1 45%;
+    flex-direction: column;
+    height: 10rem;
+    justify-content: center;
+    margin: 1rem 0;
+    max-width: 45%;
+    width: 15rem;
+
+    p {
+        padding: 0 0.5rem;
+        text-align: center;
+    }
+
+}
+
+.answer0 {
+    @include shadowAndBackground($primaryAccent, 5px)
+}
+
+.answer1 {
+    @include shadowAndBackground($secondaryBackground, -5px)
+}
+
+.answer2 {
+    @include shadowAndBackground($secondaryAccent, 5px)
+}
+
+.answer3 {
+    @include shadowAndBackground($answerBackground4, -5px)
+}
+
+.modalText {
+    text-align: center;
+}
+
+.stats {
+    align-items: center;
+    @include shadowAndBackground($secondaryBackground, 0px);
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+.topLeftLogo {
+    width: 50%;
+
+    img {
+        width: 100%;
+      }
+}
+
+@media (max-width: 800px) {
+    .stats {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .answer {
+        flex: 0 1 auto;
+        height: unset;
+        max-width: 100%
+    }
+
+    .questionAnswers {
+        flex-direction: column;
+
+        h2 {
+            font-size: 1rem;
+            margin: 2rem 0;
+        }
+    }
+}
