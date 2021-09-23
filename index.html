@@ -18,72 +18,80 @@
         <div class="imgContainer">
           <img src="./assets/logopink.svg" alt="trivia blitz">
         </div>
-      </div>
-      <!--headingContainer ends-->
+        <div class="offsetBG"></div>
+        <div class="offsetBGTwo"></div>
+      </div><!--headingContainer ends-->
+      
 
       <div class="gameSetup">
 
-        <div class="gameInfo">
-
+        <section class="gameInfo">
           <h2>How to Play</h2>
-
           <ul>
             <li>You will have 30 seconds to answer each question</li>
-            <li>You'll receive 100 points per correct answer plus bonus points for time remaining</li>
-            <li>Select your preferred options from the dropdowns below</li>
-            <li>Press go to begin!</li>
+            <li>100 points are awarded per correct answer plus bonus points for time remaining</li>
           </ul>
-        </div>
+        </section>
 
         <form action="">
 
-          <h2>Select your game options below</h2>
+          <h2>Select your game options and press GO to begin!</h2>
+          
+          <div class="form-container">
+            <label class="sr-only" for="category">Category of questions</label>
+            <select name="category" id="category" required>
+              <option value= "" selected disabled>Choose a Category</option>
+              <option value="9">General Knowledge</option>
+              <option value="10">Entertainment: Books</option>
+              <option value="11">Entertainment: Film</option>
+              <option value="12">Entertainment: Music</option>
+              <option value="13">Entertainment: Musicals & Theatres</option>
+              <option value="14">Entertainment: Television</option>
+              <option value="15">Entertainment: Video Games</option>
+              <option value="16">Entertainment: Board Games</option>
+              <option value="29">Entertainment: Comics</option>
+              <option value="17">Science & Nature</option>
+              <option value="18">Science: Computers</option>
+              <option value="19">Science: Mathematics</option>
+              <option value="20">Mythology</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="25">Art</option>
+              <option value="26">Celebrities</option>
+              <option value="27">Animals</option>
+              <option value="28">Vehicles</option>
+            </select>
 
-          <label class="sr-only" for="category">Category of questions</label>
-          <select name="category" id="category" required>
-            <option value="" selected disabled>Choose a Category</option>
-            <option value="9">General Knowledge</option>
-            <option value="10">Entertainment: Books</option>
-            <option value="11">Entertainment: Film</option>
-            <option value="12">Entertainment: Music</option>
-            <option value="13">Entertainment: Musicals & Theatres</option>
-            <option value="14">Entertainment: Television</option>
-            <option value="15">Entertainment: Video Games</option>
-            <option value="16">Entertainment: Board Games</option>
-            <option value="29">Entertainment: Comics</option>
-            <option value="17">Science & Nature</option>
-            <option value="18">Science: Computers</option>
-            <option value="19">Science: Mathematics</option>
-            <option value="20">Mythology</option>
-            <option value="22">Geography</option>
-            <option value="23">History</option>
-            <option value="25">Art</option>
-            <option value="26">Celebrities</option>
-            <option value="27">Animals</option>
-            <option value="28">Vehicles</option>
-          </select>
+            <label class="sr-only" for="difficulty">difficulty of questions</label>
+            <select name="difficulty" id="difficulty" required>
+              <option value="" selected disabled>Choose a difficulty</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
 
-          <label class="sr-only" for="difficulty">difficulty of questions</label>
-          <select name="difficulty" id="difficulty" required>
-            <option value="" selected disabled>Choose a difficulty</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-
-          <label for="numberOfQuestions" class="sr-only">number of questions</label>
-          <select name="numberOfQuestions" id="numberOfQuestions" required>
-            <option value="" selected disabled>Choose number of Questions</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-          </select>
-
-          <button>GO!</button>
+            <label for="numberOfQuestions" class="sr-only">number of questions</label>
+            <select name="numberOfQuestions" id="numberOfQuestions" required>
+              <option value ="" selected disabled>Choose number of Questions</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+            
+            <button>GO!</button>
+          
+          </div><!--form-container ends-->
+        
         </form>
-      </div>
-    <!--welcome ends-->
-  </div>
+      </div> <!-- gameSetup ends -->
+    </div><!--welcome ends-->
+    
+
+
+
+
+
+
 
     <div class="game hidden">
       <div class="stats">
