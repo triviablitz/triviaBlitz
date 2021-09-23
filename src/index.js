@@ -144,7 +144,8 @@ app.timerInterval = () => {
         const endScreen = document.querySelector('#endScreenText');
         endScreen.innerHTML = `
             <p>${app.numOfCorrect}/${app.numOfQuestions} questions correct.</p>
-            <p>Final Score: ${app.score}</p>`
+            <p>Final Score: ${app.score}</p>
+            <a href="index.html">Play Again</a>`
         document.querySelector('.endGameModal').classList.remove('hidden');
     } else if (app.timer === 0 && app.questionNumber < app.questions.length - 1) { //Checks if timer has run out without an answer being given and advances to next question
         console.log('this ran')
