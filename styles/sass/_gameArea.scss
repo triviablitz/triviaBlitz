@@ -59,15 +59,32 @@
     @include shadowAndBackground($answerBackground4, -5px)
 }
 
+.endGameModal {
+    align-items: center;
+    background-color: #c32bac85;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    z-index: 5;
+}
+
 .modalText {
     text-align: center;
+
+    a {
+        color: $fontColour;
+    }
 }
 
 .stats {
     align-items: center;
-    @include shadowAndBackground($secondaryBackground, 0px);
     display: flex; 
     justify-content: space-evenly;
+    @include shadowAndBackground($secondaryBackground, 0px);
 }
 
 .topLeftLogo {
