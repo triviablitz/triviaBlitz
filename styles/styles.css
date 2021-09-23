@@ -556,6 +556,7 @@ button {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     height: unset;
+    margin: 0.3rem 0;
     max-width: 100%;
   }
 
