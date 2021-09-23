@@ -138,17 +138,15 @@ app.timerInterval = () => {
     //If questions remain and timer has reached zero or first run is true, then run display function, reset timer to original start and increase question number. If questions remaining is 0 and timer has reached 0, present user with final score and ask if they want to play again.
     if (app.questionNumber === app.questions.length  && app.userAnswer || app.questionNumber === app.questions.length -1 && app.timer === 0) {
         //game over
-        console.log('game over')
         clearInterval(app.intervalID);
         // present play again button on a modal 
         const endScreen = document.querySelector('#endScreenText');
         endScreen.innerHTML = `
             <p>${app.numOfCorrect}/${app.numOfQuestions} questions correct.</p>
             <p>Final Score: ${app.score}</p>
-            <a href="index.html">Play Again</a>`
+            <a href="index.html">Play Again</a>`;
         document.querySelector('.endGameModal').classList.remove('hidden');
     } else if (app.timer === 0 && app.questionNumber < app.questions.length - 1) { //Checks if timer has run out without an answer being given and advances to next question
-        console.log('this ran')
         app.userAnswer = '';
         app.questionNumber++;
         app.displayResults();
