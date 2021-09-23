@@ -21,7 +21,7 @@
       </div>
       <!--headingContainer ends-->
 
-<div class="gameSetup">
+      <div class="gameSetup">
 
         <div class="gameInfo">
 
@@ -41,7 +41,7 @@
 
           <label class="sr-only" for="category">Category of questions</label>
           <select name="category" id="category" required>
-            <option value= "" selected disabled>Choose a Category</option>
+            <option value="" selected disabled>Choose a Category</option>
             <option value="9">General Knowledge</option>
             <option value="10">Entertainment: Books</option>
             <option value="11">Entertainment: Film</option>
@@ -73,45 +73,41 @@
 
           <label for="numberOfQuestions" class="sr-only">number of questions</label>
           <select name="numberOfQuestions" id="numberOfQuestions" required>
-            <option value ="" selected disabled>Choose number of Questions</option>
+            <option value="" selected disabled>Choose number of Questions</option>
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="20">20</option>
           </select>
-          
+
           <button>GO!</button>
         </form>
-</div>
-    </div>
+      </div>
     <!--welcome ends-->
-
-
-
-
-
-
+  </div>
 
     <div class="game hidden">
       <div class="stats">
-        <div class="topLeftLogo"></div>
+        <div class="topLeftLogo"> <img src="./assets/logopink.svg" alt="trivia blitz"></div>
         <ul class="gameStats">
           <li id="timer">Time Left:</li>
           <li id="score">Score: 0</li>
           <li id="questionsCounter">Question number:</li>
         </ul>
       </div>
-      <div class="questionAnswers"></div>
-      <div class="endGameModal hidden">
-        <div class="modalText">
-          <a href="index.html">Play Again</a>
-        </div>
+      <section class="questionAnswers">
+    </div>
+    <div class="endGameModal hidden">
+      <div class="modalText">
+        <a href="index.html">Play Again</a>
       </div>
+    </div>
     </div>
   </main>
 
   <footer>
     <p>Data provided by <a href="https://opentdb.com/" target="_blank">Open Trivia API</a></p>
   </footer>
+
   <script src="./src/index.js"></script>
 </body>
 

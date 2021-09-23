@@ -5,6 +5,9 @@
 
     h2 {
         font-weight: 400;
+        margin: 5rem 0;
+        padding: 0 2rem;
+        text-align: center;
     }
 
     ul {
@@ -26,38 +29,75 @@
     color: $fontColour;
     display: flex;
     flex: 0 1 45%;
+    flex-direction: column;
     height: 10rem;
     justify-content: center;
     margin: 1rem 0;
     max-width: 45%;
     width: 15rem;
 
-    p:first-of-type{
-        padding-right: 0.5rem;
+    p {
+        padding: 0 0.5rem;
+        text-align: center;
     }
 
 }
 
 .answer0 {
-    background-color: $answerBackground1;
-    box-shadow: 5px 5px $fontColour;
+    @include shadowAndBackground($primaryAccent, 5px)
 }
 
 .answer1 {
-    background-color: $answerBackground2;
-    box-shadow: -5px 5px $fontColour;
+    @include shadowAndBackground($secondaryBackground, -5px)
 }
 
 .answer2 {
-    background-color: $answerBackground3;
-    box-shadow: 5px 5px $fontColour;
+    @include shadowAndBackground($secondaryAccent, 5px)
 }
 
 .answer3 {
-    background-color: $answerBackground4;
-    box-shadow: -5px 5px $fontColour;
+    @include shadowAndBackground($answerBackground4, -5px)
 }
 
 .modalText {
     text-align: center;
+}
+
+.stats {
+    align-items: center;
+    @include shadowAndBackground($secondaryBackground, 0px);
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+.topLeftLogo {
+    width: 50%;
+
+    img {
+        width: 100%;
+      }
+}
+
+@media (max-width: 800px) {
+    .stats {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .answer {
+        flex: 0 1 auto;
+        height: unset;
+        max-width: 100%
+    }
+
+    .questionAnswers {
+        flex-direction: column;
+
+        h2 {
+            font-size: 1rem;
+            margin: 2rem 0;
+        }
+    }
 }

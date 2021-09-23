@@ -316,6 +316,9 @@ button {
 }
 .questionAnswers h2 {
   font-weight: 400;
+  margin: 5rem 0;
+  padding: 0 2rem;
+  text-align: center;
 }
 .questionAnswers ul {
   display: -webkit-box;
@@ -345,6 +348,10 @@ button {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 45%;
           flex: 0 1 45%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 10rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -353,24 +360,25 @@ button {
   max-width: 45%;
   width: 15rem;
 }
-.answer p:first-of-type {
-  padding-right: 0.5rem;
+.answer p {
+  padding: 0 0.5rem;
+  text-align: center;
 }
 
 .answer0 {
-  background-color: #7027a0;
+  background-color: #7027A0;
   -webkit-box-shadow: 5px 5px #fff;
           box-shadow: 5px 5px #fff;
 }
 
 .answer1 {
-  background-color: #c52bae;
+  background-color: #C32BAD;
   -webkit-box-shadow: -5px 5px #fff;
           box-shadow: -5px 5px #fff;
 }
 
 .answer2 {
-  background-color: #f56fae;
+  background-color: #F56FAD;
   -webkit-box-shadow: 5px 5px #fff;
           box-shadow: 5px 5px #fff;
 }
@@ -385,6 +393,57 @@ button {
   text-align: center;
 }
 
+.stats {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #C32BAD;
+  -webkit-box-shadow: 0px 5px #fff;
+          box-shadow: 0px 5px #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.topLeftLogo {
+  width: 50%;
+}
+.topLeftLogo img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .stats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .answer {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    height: unset;
+    max-width: 100%;
+  }
+
+  .questionAnswers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .questionAnswers h2 {
+    font-size: 1rem;
+    margin: 2rem 0;
+  }
+}
 html {
   font-size: 125%;
 }

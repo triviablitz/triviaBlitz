@@ -3,10 +3,9 @@ $primaryAccent : #7027A0;
 $secondaryBackground : #C32BAD;
 $secondaryAccent: #F56FAD;
 $fontColour: #fff;
-
-
-$answerBackground1 : #7027a0;
-$answerBackground2 : #c52bae;
-$answerBackground3: #f56fae;
 $answerBackground4: #ab3ff3;
 
+@mixin shadowAndBackground($color, $offsetX) {
+    background-color: $color;
+    box-shadow: $offsetX 5px $fontColour;
+}
