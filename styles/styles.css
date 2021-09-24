@@ -607,6 +607,10 @@ body {
   display: none;
 }
 
+h2 {
+  font-weight: 400;
+}
+
 li {
   list-style: none;
 }
