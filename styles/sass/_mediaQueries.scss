@@ -1,0 +1,94 @@
+@media (prefers-reduced-motion: no-preference) {
+  // change this so that animation not shown if not preferred
+}
+
+
+@media(max-width: 1400px) {
+  .gameInfo > ul > li:nth-child(2) {
+    margin-left: 0;
+    
+  }
+}
+
+@media(max-width: 1000px) {
+  
+  .headingContainer {
+    transform: scale(0.7);
+  }
+
+  
+
+  .imgContainer,
+  .offsetBG,
+  .offsetBGTwo {
+    width: 100%;
+  }
+  
+  .gameSetup {
+    display: flex;
+    flex-direction: column; 
+  }
+
+  .gameInfo h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+
+  .gameInfo li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 0.9rem;
+    
+  }
+  
+  
+  .formContainer { 
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .gameForm {
+    align-items: center;
+    margin-top: 0.5rem;
+
+    h2 {
+      margin-right: 0;
+    }
+  }
+
+  .formContainer > * {
+    width: 80%;
+    padding: 0.8rem;
+  }
+}
+
+@media(max-width:768px) {
+  .headingContainer img {
+    transform: scale(0.6);
+  }
+
+  .gameSetup {
+    margin-top: -5%;
+  }
+
+  .gameInfo {
+    margin: 0;
+    width: 100%;
+  }
+
+  .gameForm {
+    margin-top: 0;
+    width: 100%;
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  .formContainer > * { 
+    width: 100%;
+  }
+}
