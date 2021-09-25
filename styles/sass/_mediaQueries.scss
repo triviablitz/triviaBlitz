@@ -1,5 +1,9 @@
-@media (prefers-reduced-motion: no-preference) {
-  // change this so that animation not shown if not preferred
+@media (prefers-reduced-motion: reduce) {
+  // don't show animations
+  .offsetBG,
+  .offsetBGTwo {
+    animation-duration: 0s;
+  }
 }
 
 

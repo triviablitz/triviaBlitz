@@ -609,6 +609,13 @@ button {
       align-self: flex-start;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .offsetBG,
+.offsetBGTwo {
+    -webkit-animation-duration: 0s;
+            animation-duration: 0s;
+  }
+}
 @media (max-width: 1400px) {
   .gameInfo > ul > li:nth-child(2) {
     margin-left: 0;
