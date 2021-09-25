@@ -73,11 +73,11 @@
 }
 
 .modalText {
-    text-align: center;
-    width: 60%;
-    height: 14rem;
     background-color: $mainBackground;
     border: 3px solid white;
+    height: 14rem;
+    text-align: center;
+    width: 60%;
 
     a {
         color: $fontColour;
@@ -99,38 +99,14 @@
       }
 }
 
-@media (max-width: 800px) {
-    .stats {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .answer {
-        flex: 0 1 auto;
-        height: unset;
-        margin: 0.3rem 0;
-        max-width: 100%
-    }
-
-    .questionAnswers {
-        flex-direction: column;
-
-        h2 {
-            font-size: 1rem;
-            margin: 2rem 0;
-        }
-    }
-}
 
 
 /////////loading screen////////////////
 
 .loadingScreen {
+  align-self: flex-start;
   font-size: 3rem;
   margin-left: 6rem;
   margin-top: 5rem;
-  align-self: flex-start;
 }
 
