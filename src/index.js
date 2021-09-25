@@ -24,6 +24,7 @@ app.questions = [];
 app.firstRun = true;
 app.numOfCorrect = 0;
 app.welcomeScreen = document.querySelector('.welcome');
+app.dots = document.querySelector('#dots');
 app.gameScreen = document.querySelector('.game');
 app.gameSection = document.querySelector('.questionAnswers');
 app.gameStats = document.querySelector('.gameStats');
@@ -41,6 +42,7 @@ app.getUserOptions = () => {
         app.numOfQuestions = document.querySelector('#numberOfQuestions').value;
         app.welcomeScreen.style.display = 'none';
         app.gameScreen.style.display = 'block';
+        app.loadingScreen();
         app.apiCall(category, difficulty, app.numOfQuestions);
     })
 }
@@ -91,12 +93,31 @@ app.apiCall = (categoryOption, difficultyOption, numOfQuestions) => {
                 app.gameScreen.classList.toggle('hidden');
                 app.gameScreen.innerHTML = `<h2>Sorry, something went wrong. <a href="index.html"> Back to home </a></h2>`;
             }
-        })
-
-
-
+        });
 
 }
+
+////// show a loading screen while data is fetched from the API
+///// called line 45 directly before API call
+
+
+app.loadingScreen = () => {
+  
+  let dotCounter = 0;
+  setInterval(() => {
+    if(dotCounter < 3) {
+      app.dots.innerText += ' . ';
+      dotCounter++;
+    } else {
+      app.dots.innerText = '';
+      dotCounter = 0;
+    }
+  }, 500);
+}
+
+
+
+
 
 app.displayResults = () => {
     app.userAnswer = '';

@@ -254,6 +254,9 @@ template {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .imgContainer {
@@ -270,6 +273,9 @@ template {
   background-color: #C32BAD;
   z-index: 3;
   border: 3px solid white;
+}
+.imgContainer img {
+  max-width: 150%;
 }
 
 .offsetBG {
@@ -534,6 +540,10 @@ button {
 
 .modalText {
   text-align: center;
+  width: 60%;
+  height: 14rem;
+  background-color: #1DB9C3;
+  border: 3px solid white;
 }
 .modalText a {
   color: #fff;
@@ -591,9 +601,21 @@ button {
     margin: 2rem 0;
   }
 }
+.loadingScreen {
+  font-size: 3rem;
+  margin-left: 6rem;
+  margin-top: 5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 @media (max-width: 1400px) {
   .gameInfo > ul > li:nth-child(2) {
     margin-left: 0;
+  }
+
+  .loadingScreen {
+    font-size: 2rem;
   }
 }
 @media (max-width: 1000px) {
@@ -661,6 +683,11 @@ button {
   .headingContainer img {
     -webkit-transform: scale(0.6);
             transform: scale(0.6);
+  }
+
+  .loadingScreen {
+    font-size: 1rem;
+    margin-left: 2rem;
   }
 
   .gameSetup {

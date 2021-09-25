@@ -74,6 +74,10 @@
 
 .modalText {
     text-align: center;
+    width: 60%;
+    height: 14rem;
+    background-color: $mainBackground;
+    border: 3px solid white;
 
     a {
         color: $fontColour;
@@ -119,3 +123,14 @@
         }
     }
 }
+
+
+/////////loading screen////////////////
+
+.loadingScreen {
+  font-size: 3rem;
+  margin-left: 6rem;
+  margin-top: 5rem;
+  align-self: flex-start;
+}
+
