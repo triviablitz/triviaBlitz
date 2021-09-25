@@ -69,7 +69,11 @@
   }
 }
 
-@media(max-width:768px) {
+@media(max-width: 768px) {
+  .headingContainer {
+    height: 15rem;
+  }
+  
   .headingContainer img {
     transform: scale(0.6);
   }
