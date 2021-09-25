@@ -14,7 +14,7 @@
    display: flex;
    flex-direction: column;
    position: relative;
-
+   align-items: center;
 }
 
 .imgContainer {
@@ -26,6 +26,9 @@
   background-color: $secondaryBackground;
   z-index: 3;
   border: 3px solid white;
+  img {
+    max-width: 150%;
+  }
 }
 
 .offsetBG {
@@ -134,4 +137,5 @@ button {
   background-color: #F56FAD;
   padding: 0.35rem;
 }
+
 
