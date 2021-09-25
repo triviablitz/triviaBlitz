@@ -139,6 +139,11 @@ app.displayResults = () => {
     app.checkAnswer();
 }
 
+app.playSound = (sound) => {
+    const audio = new Audio(`./assets/${sound}.wav`);
+    audio.play();
+}
+
 
 // a function that adds event listeners to the answer elements after they are painted to the page -- if clicked, app.score is incremented else not
 app.checkAnswer = () => {
@@ -146,6 +151,7 @@ app.checkAnswer = () => {
         app.userAnswer = e.target.textContent;
         const isCorrect = document.createElement('p');
         if (app.userAnswer === app.currentQuestion.correctAnswer) {
+            app.playSound('correct');
             app.score += 100 + ((app.timer * app.timer) / 2);
             isCorrect.textContent = 'correct';
             e.target.append(isCorrect);
@@ -153,6 +159,7 @@ app.checkAnswer = () => {
             app.questionNumber++;
             app.scoreDisplay.textContent = `Score: ${app.score}`;
         } else {
+            app.playSound('wrong');
             isCorrect.textContent = 'wrong';
             e.target.append(isCorrect);
             app.questionNumber++;
