@@ -1,4 +1,5 @@
 @media (prefers-reduced-motion: reduce) {
+
   // don't show animations
   .offsetBG,
   .offsetBGTwo {
@@ -8,7 +9,7 @@
 
 
 @media(max-width: 1400px) {
-  .gameInfo > ul > li:nth-child(2) {
+  .gameInfo>ul>li:nth-child(2) {
     margin-left: 0;
   }
 
@@ -18,7 +19,7 @@
 }
 
 @media(max-width: 1000px) {
-  
+
   .headingContainer {
     transform: scale(0.7);
   }
@@ -28,30 +29,30 @@
   .offsetBGTwo {
     width: 100%;
   }
-  
+
   .gameSetup {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
   }
 
   .gameInfo h2 {
-    margin-top: 0;
-    margin-bottom: 0;
     font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 
   .gameInfo li {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
     font-size: 0.9rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
   }
-  
-  
-  .formContainer { 
+
+
+  .formContainer {
+    align-items: center;
     flex-direction: column;
     width: 100%;
-    align-items: center;
   }
 
   .gameForm {
@@ -63,9 +64,9 @@
     }
   }
 
-  .formContainer > * {
-    width: 80%;
+  .formContainer>* {
     padding: 0.8rem;
+    width: 80%;
   }
 }
 
@@ -73,12 +74,12 @@
   .headingContainer {
     height: 15rem;
   }
-  
+
   .headingContainer img {
     transform: scale(0.6);
   }
 
-   .loadingScreen {
+  .loadingScreen {
     font-size: 1rem;
     margin-left: 2rem;
   }
@@ -89,6 +90,7 @@
 
   .gameInfo {
     margin: 0;
+    text-align: center;
     width: 100%;
   }
 
@@ -101,7 +103,30 @@
     }
   }
 
-  .formContainer > * { 
+  .formContainer>* {
     width: 100%;
+  }
+
+  .stats {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .answer {
+      flex: 0 1 auto;
+      height: unset;
+      margin: 0.3rem 0;
+      max-width: 100%
+  }
+
+  .questionAnswers {
+      flex-direction: column;
+
+      h2 {
+          font-size: 1rem;
+          margin: 2rem 0;
+      }
   }
 }
