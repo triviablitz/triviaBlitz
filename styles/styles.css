@@ -240,6 +240,7 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 95vh;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -579,6 +580,36 @@ button {
   font-size: 3rem;
   margin-left: 6rem;
   margin-top: 5rem;
+
+}
+
+.soundLabel {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.soundLabel:hover,
+.soundLabel:focus {
+  color: #F56FAD;
+}
+
+.soundLabel i {
+  padding-left: 1.5rem;
+}
+
+.soundLabel p {
+  margin: 0;
+
 }
 
 @media (prefers-reduced-motion: reduce) {

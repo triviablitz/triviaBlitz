@@ -23,8 +23,12 @@ app.questionNumber = 0;
 app.questions = [];
 app.firstRun = true;
 app.numOfCorrect = 0;
+app.soundEnabled = true;
 app.welcomeScreen = document.querySelector('.welcome');
 app.dots = document.querySelector('#dots');
+app.soundCheck = document.querySelector('#soundCheck');
+app.soundIcon = document.querySelector('#soundIcon');
+app.soundLabelText = document.querySelector('.soundLabelText');
 app.gameScreen = document.querySelector('.game');
 app.gameSection = document.querySelector('.questionAnswers');
 app.gameStats = document.querySelector('.gameStats');
@@ -115,6 +119,26 @@ app.loadingScreen = () => {
   }, 500);
 }
 
+// Listen for a change on checbox input to determine whether sound should be 
+// enabled or disabled.
+
+
+
+app.soundToggle = () => {
+    if(app.soundEnabled) {
+        app.soundEnabled = false;
+        app.soundIcon.classList.remove('fa-toggle-on');
+        app.soundIcon.classList.add('fa-toggle-off');
+        app.soundLabelText.innerText = 'sound off';
+        
+    } else {
+        app.soundEnabled = true;
+        app.soundIcon.classList.remove('fa-toggle-off');
+        app.soundIcon.classList.add('fa-toggle-on');
+        app.soundLabelText.innerText = 'sound on';
+    }
+}
+
 
 
 
@@ -141,7 +165,9 @@ app.displayResults = () => {
 
 app.playSound = (sound) => {
     const audio = new Audio(`./assets/${sound}.wav`);
-    audio.play();
+    if(app.soundEnabled) {
+        audio.play();
+    }
 }
 
 
@@ -203,6 +229,7 @@ app.timerInterval = () => {
 
 app.init = () => {
     app.getUserOptions();
+    app.soundCheck.addEventListener('click', app.soundToggle);
 }
 
 app.init();
