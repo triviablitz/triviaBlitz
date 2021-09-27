@@ -580,6 +580,7 @@ button {
   font-size: 3rem;
   margin-left: 6rem;
   margin-top: 5rem;
+
 }
 
 .soundLabel {
@@ -608,6 +609,7 @@ button {
 
 .soundLabel p {
   margin: 0;
+
 }
 
 @media (prefers-reduced-motion: reduce) {
