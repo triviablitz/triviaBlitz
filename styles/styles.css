@@ -232,7 +232,6 @@ template {
 }
 
 .welcome {
-  background-color: #1DB9C3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -729,9 +728,11 @@ html {
 }
 
 body {
-  max-width: 1440px;
+  background: url(./../assets/background.jpg);
+  background-attachment: fixed;
+  background-position: center;
   margin: 0 auto;
-  background-color: #1DB9C3;
+  max-width: 1440px;
 }
 
 .hidden {
@@ -747,13 +748,17 @@ li {
 }
 
 ul {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 footer {
-  width: 100%;
+  color: #fff;
   text-align: center;
+  width: 100%;
+}
+footer a {
+  color: #fff;
 }
 
 main {
